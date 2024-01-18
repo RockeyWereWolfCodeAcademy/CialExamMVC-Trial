@@ -2,12 +2,14 @@
 using CialExamMVC_Trial.Contexts;
 using CialExamMVC_Trial.Helpers;
 using CialExamMVC_Trial.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CialExamMVC_Trial.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminExpertController : Controller
     {
         readonly CialDbContext _context;

@@ -1,8 +1,10 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Cial Home";
 }
 
-    <!--about section start -->
+@model IEnumerable<ExpertListVM>
+<!--about section start -->
     <div class="services_section layout_padding">
       <div class="container">
         <div class="row">
@@ -147,7 +149,22 @@
         <p class="what_text_1">It is a long established fact that a reader will be distracted by the readable content of a </p>
         <div class="team_section_2 layout_padding">
           <div class="row">
-            <div class="col-sm-3">
+            @foreach (var expert in Model)
+            {
+                <div class="col-sm-3">
+                    <img src="~/@expert.ImgUrl" class="image_7">
+                    <p class="readable_text">@expert.Content</p>
+                    <p class="readable_text_1">Follow Us</p>
+                    <div class="social_icon">
+                        <ul>
+                            <li><a href="#"><img src="~/assets/images/fb-icon.png"></a></li>
+                            <li><a href="#"><img src="~/assets/images/twitter-icon.png"></a></li>
+                            <li><a href="#"><img src="~/assets/images/linkedin-icon.png"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            }
+            @* <div class="col-sm-3">
               <img src="~/assets/images/img-7.png" class="image_7">
               <p class="readable_text">Readable</p>
               <p class="readable_text_1">Follow Us</p>
@@ -194,7 +211,7 @@
                   <li><a href="#"><img src="~/assets/images/linkedin-icon.png"></a></li>
                 </ul>
               </div>
-            </div>
+            </div> *@
           </div>
         </div>
       </div>

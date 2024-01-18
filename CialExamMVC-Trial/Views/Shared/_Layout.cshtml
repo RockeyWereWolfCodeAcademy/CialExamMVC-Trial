@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using CialExamMVC_Trial.Helpers.Enums;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- basic -->
@@ -56,6 +57,27 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Logout" asp-controller="Auth">Logout</a>
+                            </li>
+                            @if (User.IsInRole(nameof(Roles.Admin)))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-action="Index" asp-controller="Admin">Admin</a>
+                                </li>
+                            }
+                        } else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Login" asp-controller="Auth">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Register" asp-controller="Auth">Register</a>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </nav>
