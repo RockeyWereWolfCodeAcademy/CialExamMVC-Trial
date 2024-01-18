@@ -30,8 +30,9 @@ namespace CialExamMVC_Trial.Areas.Admin.Controllers
             return View(data);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.Socials = await _context.Socials.ToListAsync();
             return View();
         }
 
@@ -52,7 +53,11 @@ namespace CialExamMVC_Trial.Areas.Admin.Controllers
             var dataToCreate = new Expert
             {
                 Content = vm.Content,
-                ImgUrl = vm.Image.SaveFileAsync(PathConstants.ExpertsImagePath).Result
+                ImgUrl = vm.Image.SaveFileAsync(PathConstants.ExpertsImagePath).Result,
+                ExpertSocials = vm.SocialIds.Any() ? vm.SocialIds.Select(sId => new ExpertSocial
+                {
+                    SocialId = sId
+                }).ToList() : new List<ExpertSocial>()
             };
             await _context.Experts.AddAsync(dataToCreate);
             await _context.SaveChangesAsync();

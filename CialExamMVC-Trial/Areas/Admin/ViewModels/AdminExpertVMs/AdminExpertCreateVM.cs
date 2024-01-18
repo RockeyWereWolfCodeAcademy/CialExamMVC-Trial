@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CialExamMVC_Trial.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace CialExamMVC_Trial.Areas.Admin.ViewModels.AdminExpertVMs
 {
@@ -8,5 +9,6 @@ namespace CialExamMVC_Trial.Areas.Admin.ViewModels.AdminExpertVMs
         public IFormFile Image { get; set; }
         [Required, MaxLength(16)]
         public string Content { get; set; }
+        public IEnumerable<int>? SocialIds { get; set; }
     }
 }

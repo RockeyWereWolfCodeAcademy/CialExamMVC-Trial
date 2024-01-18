@@ -12,5 +12,7 @@ namespace CialExamMVC_Trial.Contexts
         
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Expert> Experts { get; set; }
+        public DbSet<Social> Socials { get; set; }
+        public DbSet<ExpertSocial> ExpertSocials { get; set; }
     }
 }

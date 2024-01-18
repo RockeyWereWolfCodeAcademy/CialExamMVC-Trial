@@ -21,6 +21,13 @@
                     <input asp-for="Image" accept="image/*">
                     <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
+                <div class="mb-3">
+                    <label asp-for="SocialIds" class="form-label">Socials</label>
+                    <select asp-for="SocialIds" class="form-control" asp-items='@new SelectList(ViewBag.Socials, "Id", "SocialUrl")'>
+                        <option disabled selected>Select Socials</option>
+                    </select>
+                    <span asp-validation-for="SocialIds" class="text-danger"></span>
+                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
