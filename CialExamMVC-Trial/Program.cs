@@ -1,4 +1,5 @@
 using CialExamMVC_Trial.Contexts;
+using CialExamMVC_Trial.Helpers;
 using CialExamMVC_Trial.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseSeedData();
 
 app.MapControllerRoute(
     name: "areas",
