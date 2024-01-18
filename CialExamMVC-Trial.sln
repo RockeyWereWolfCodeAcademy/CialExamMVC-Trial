@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CialExamMVC-Trial", "CialExamMVC-Trial\CialExamMVC-Trial.csproj", "{BFC67872-95F4-45C1-B3C2-1D0790580D1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFC67872-95F4-45C1-B3C2-1D0790580D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC67872-95F4-45C1-B3C2-1D0790580D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC67872-95F4-45C1-B3C2-1D0790580D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC67872-95F4-45C1-B3C2-1D0790580D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2182A557-6398-4CBF-BE74-4C42A0A3669F}
+	EndGlobalSection
+EndGlobal
