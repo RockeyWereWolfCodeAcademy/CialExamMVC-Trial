@@ -6,6 +6,8 @@
     <script src="~/admin/js/demo/datatables-demo.js"></script>
 }
 
+@model IEnumerable<AdminExpertListVM>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -21,29 +23,39 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Experts</h6>
+            <a class="btn btn-outline-success" asp-action="Create">Create</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Id</th>
+                            <th>Content</th>
+                            <th>Image</th>
+                            <th colspan="2" style="text-align:center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
+                        @if (!Model.Any())
+                        {
+                            <tr>
+                                <td colspan="5" style="text-align:center">NO DATA</td>
+                            </tr>
+                        } else
+                        {
+                            @foreach(var expert in Model)
+                            {
+                                <tr>
+                                    <td>@expert.Id</td>
+                                    <td>@expert.Content</td>
+                                    <td><img src="@expert.ImgUrl" width="100" length="100"></td>
+                                    <td><a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@expert.Id">Delete</a></td>
+                                    <td><a class="btn btn-outline-info" asp-action="Update" asp-route-id="@expert.Id">Update</a></td>
+                                </tr>
+                            }
+                        }
+                        
                     </tbody>
                 </table>
             </div>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Create Expert";
+}
+
+@model AdminExpertCreateVM
+
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Create Expert</h6>
+        </div>
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Content" class="form-label">Content</label>
+                    <input asp-for="Content" class="form-control" asp-for="Content">
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Image" class="form-label">Image</label>
+                    <input asp-for="Image" accept="image/*">
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
